@@ -1,0 +1,10 @@
+{% extends 'regapp/base.html' %}
+{% load crispy_forms_tags %}
+{%load static %}
+
+{% block content %}
+    <div class="container">
+        <h2 style="color: aqua;">{{user.username}}</h2>
+    <h2 style="color: aqua;">{{user.email}}</h2>
+    </div>
+{% endblock %}

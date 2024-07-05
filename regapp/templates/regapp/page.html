@@ -1,0 +1,20 @@
+{% extends 'regapp/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<div class="container" style="margin-top: 30px;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if predicted_price %}
+    <div>
+        <h2 style="color: rgb(70, 26, 213);">Predicted Price: ${{ predicted_price }}</h2>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock content %}
